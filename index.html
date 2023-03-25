@@ -8,23 +8,26 @@
     <title>Document</title>
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
 </head>
 
 <body>
 <div id="root"></div>
 
 
-<script>
+<script type="text/babel">
     function HelloWorld(){
-        return React.createElement('div', {id: 'parent'}, [
-            React.createElement('p', {className: 'Samir'}, 'Hello Samir'),
-            React.createElement('p', {className: 'Marie'}, 'Hello marie'),
-            React.createElement('div', null, [
-                React.createElement('p', null, 'Hello Richard')
-            ])
-        ]);
-    }
-    ReactDOM.render(React.createElement(HelloWorld), document.getElementById('root'))
+        return( 
+            <div className="parent">
+                <p>Hello Julien</p>
+                <p>Hello Samir</p>
+                <div>
+                    <p>Hello Richard</p>
+                </div>
+            </div>
+    )}   
+    ReactDOM.render(<HelloWorld/>, document.getElementById('root'))
 </script>
 
 
