@@ -17,17 +17,19 @@
 
 
 <script type="text/babel">
-    function HelloWorld(){
+    function HelloWorld(props){
+        console.log('props', props);
+        
         return( 
             <div className="parent">
-                <p>Hello Julien</p>
-                <p>Hello Samir</p>
+                <p>Hello {props.nom1}</p>
+                <p>Hello {props.nom2}</p>
                 <div>
-                    <p>Hello Richard</p>
+                    <p>Hello {props.nom3}</p>
                 </div>
             </div>
     )}   
-    ReactDOM.render(<HelloWorld/>, document.getElementById('root'))
+    ReactDOM.render(<HelloWorld nom1="Zaraaaaa" nom2="Paul" nom3="Marineee"/>, document.getElementById('root'))
 </script>
 
 
