@@ -13,9 +13,16 @@
 <body>
 <div id="root"></div>
 
+
 <script>
     function HelloWorld(){
-        return React.createElement('p', {id: 'monParagraphe'}, 'HelloWorld')
+        return React.createElement('div', {id: 'parent'}, [
+            React.createElement('p', {className: 'Samir'}, 'Hello Samir'),
+            React.createElement('p', {className: 'Marie'}, 'Hello marie'),
+            React.createElement('div', null, [
+                React.createElement('p', null, 'Hello Richard')
+            ])
+        ]);
     }
     ReactDOM.render(React.createElement(HelloWorld), document.getElementById('root'))
 </script>
