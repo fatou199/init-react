@@ -11,7 +11,18 @@
 </head>
 
 <body>
+<div id="root"></div>
+
+<script>
+    function HelloWorld(){
+        return React.createElement('p', {id: 'monParagraphe'}, 'HelloWorld')
+    }
+    ReactDOM.render(React.createElement(HelloWorld), document.getElementById('root'))
+</script>
+
+
+
+
 
 </body>
-
 </html>
