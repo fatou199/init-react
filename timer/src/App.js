@@ -12,6 +12,26 @@ const list = [
 // Créer le composant
 class App extends Component {
 
+  // Premiere methode pour definir le state
+  // constructor(props){
+  //   super(supers);
+  //   state = {
+  //      loading: true 
+  //   }
+  // }
+
+  // Deuxieme maniere de definir les state
+  state = {
+    loading: true 
+  }
+
+  // evenement emis par notre composant lorsque celui ci a rendu
+  componentDidMount(){
+    setTimeout(() => {
+      this.setState({ loading: false})
+    }, 3000)
+  }
+
   renderList(){
     return list.map(item => {
       return (
@@ -23,8 +43,15 @@ class App extends Component {
   render(){
     return (
       <div>
-        <p> Je suis le composant App </p>
-        {this.renderList()}
+        {this.state.loading ? 
+        (
+          <p>Chargement en cours...</p>
+        ):(
+          <div>
+            <p> Je suis le composant App </p>
+            {this.renderList()}
+          </div>
+        )}
       </div>
     )
   }
