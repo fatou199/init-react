@@ -22,7 +22,8 @@ class App extends Component {
 
   // Deuxieme maniere de definir les state
   state = {
-    loading: true 
+    loading: true,
+    nom: ""
   }
 
   // evenement emis par notre composant lorsque celui ci a rendu
@@ -44,6 +45,12 @@ class App extends Component {
     console.log('Clique reussi');
   }
 
+  handleChange = (e) => {
+    console.log('e:', e);
+    console.log('this:', this);
+    this.setState({ nom: e.target.value});
+  }
+
   render(){
     return (
       <div>
@@ -55,6 +62,10 @@ class App extends Component {
             <p> Je suis le composant App </p>
             {this.renderList()}
             <button onClick={this.handleClick}>Cliquez ici</button>
+            <input
+              value={this.state.nom} 
+              onChange={this.handleChange}
+            />
           </div>
         )}
       </div>
