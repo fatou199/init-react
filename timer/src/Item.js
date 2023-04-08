@@ -6,6 +6,11 @@ class Item extends Component {
         return(
             <div>
                 <p>{this.props.nom} a {this.props.age} ans</p>
+                {this.props.rouge ? (
+                    <p>Il est rouge</p>
+                ):(
+                    <p>Il est pas rouge</p>
+                )}
             </div>
         )
     }

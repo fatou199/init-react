@@ -3,10 +3,10 @@ import React, { Component }  from 'react';
 import Item from './Item';
 
 const list = [
-  {id: "1", nom:"Sophine", age: "12"},
-  {id: "2", nom:"Marco", age: "19"},
-  {id: "3", nom:"Paulo", age: "29"},
-  {id: "4", nom:"Mathilde", age: "34"},
+  {id: "1", nom:"Sophine", age: "12", rouge: true},
+  {id: "2", nom:"Marco", age: "19", rouge: false},
+  {id: "3", nom:"Paulo", age: "29", rouge: true},
+  {id: "4", nom:"Mathilde", age: "34", rouge: false},
 ];
 
 // Créer le composant
@@ -15,7 +15,7 @@ class App extends Component {
   renderList(){
     return list.map(item => {
       return (
-        <Item key={item.id} nom={item.nom} age={item.age}/>
+        <Item key={item.id} nom={item.nom} age={item.age} rouge={item.rouge}/>
       )
     })
   }
