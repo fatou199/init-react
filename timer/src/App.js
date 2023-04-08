@@ -40,6 +40,10 @@ class App extends Component {
     })
   }
 
+  handleClick(){
+    console.log('Clique reussi');
+  }
+
   render(){
     return (
       <div>
@@ -50,6 +54,7 @@ class App extends Component {
           <div>
             <p> Je suis le composant App </p>
             {this.renderList()}
+            <button onClick={this.handleClick}>Cliquez ici</button>
           </div>
         )}
       </div>
