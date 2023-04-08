@@ -1,5 +1,6 @@
 // importer les modules dont on a besoin pour ce composant
 import React, { Component }  from 'react';
+import Item from './Item';
 
 const list = [
   {id: "1", nom:"Sophine", age: "12"},
@@ -14,7 +15,7 @@ class App extends Component {
   renderList(){
     return list.map(item => {
       return (
-        <h3 key={item.id}>{item.nom} a {item.age} ans</h3>
+        <Item key={item.id} nom={item.nom} age={item.age}/>
       )
     })
   }
