@@ -4,8 +4,8 @@ class Button extends Component{
 
     render(){
         return(
-        <div>
-            <p>Button</p>
+        <div className="button__outline">
+            +
         </div>
         )
     }
