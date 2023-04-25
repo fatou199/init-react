@@ -41,8 +41,9 @@ class App extends Component {
     })
   }
 
-  handleClick(){
-    console.log('Clique reussi');
+  handleClick = () =>{
+    console.log('Clique reussi', this.reference);
+    console.log('Valeur du champ', this.reference.value);
   }
 
   handleChange = (e) => {
@@ -62,9 +63,12 @@ class App extends Component {
             <p> Je suis le composant App </p>
             {this.renderList()}
             <button onClick={this.handleClick}>Cliquez ici</button>
-            <input
+            {/* <input
               value={this.state.nom} 
               onChange={this.handleChange}
+            /> */}
+            <input
+              ref={ref => {this.reference = ref}}
             />
           </div>
         )}
