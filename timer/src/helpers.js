@@ -1,4 +1,5 @@
-import uuid from "uuid";
+import { v4 as uuidv4 } from 'uuid';
+const uuid = uuidv4();
 
 window.helpers = (function() {
   function newTimer(attrs = {}) {

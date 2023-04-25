@@ -10,7 +10,13 @@ class Container extends Component{
            {this.props.isFormOpen ? (
                <TimerForm />
             ) : (
-                <Timer />
+                <Timer 
+                    title="Apprendre React"
+                    projet="Développement Web"
+                    id="1"
+                    elapsed="8986300" // temps écoulé
+                    runningSince={null} // depuis quand le timer est lancé
+                />
             )}
         </div>
         )
