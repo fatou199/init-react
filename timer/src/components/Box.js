@@ -9,7 +9,9 @@ class Box extends Component{
         <div className="boxed--view">
             <div className="boxed--view__box">
                 <ListContainer />
-                <ActionContainer />
+                <ActionContainer 
+                isFormOpen={false}
+                />
             </div>
         </div>
         )

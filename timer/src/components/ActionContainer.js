@@ -1,11 +1,17 @@
 import React, { Component } from "react";
+import TimerForm from "./TimerForm";
+import Button from "./Button";
 
 class ActionContainer extends Component{
 
     render(){
         return(
         <div>
-            <p>Action Container</p>
+            {this.props.isFormOpen ? (
+                <TimerForm />
+            ) : (
+                <Button />
+            )}
         </div>
         )
     }
