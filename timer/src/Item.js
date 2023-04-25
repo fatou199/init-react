@@ -1,7 +1,15 @@
 // importer les modules dont on a besoin
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Item extends Component {
+    static propTypes = {
+        nom: PropTypes.string.isRequired,
+        age: PropTypes.string.isRequired,
+        rouge: PropTypes.bool,
+        job: PropTypes.bool
+    }
+
     render(){
         return(
             <div>
@@ -15,6 +23,7 @@ class Item extends Component {
         )
     }
 }
+
 
 // exporter le composant pour le rendre disponible
 export default Item 
