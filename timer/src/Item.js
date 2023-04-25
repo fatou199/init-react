@@ -26,4 +26,4 @@ class Item extends Component {
 
 
 // exporter le composant pour le rendre disponible
-export default Item 
+export default Item;
