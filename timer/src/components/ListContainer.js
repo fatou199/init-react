@@ -8,6 +8,8 @@ class ListContainer extends Component{
                 <Container 
                     onFormSubmit={this.props.onFormSubmit} 
                     onDelete={this.props.onDelete}
+                    onPlay={this.props.onPlay}
+                    onPause={this.props.onPause}
                     key={timer.id} 
                     {...timer} 
                 />
