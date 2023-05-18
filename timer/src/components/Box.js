@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ListContainer from "./ListContainer";
 import ActionContainer from "./ActionContainer";
+import { v4 as uuidv4 } from 'uuid';
 
 class Box extends Component{
     state ={
@@ -22,12 +23,25 @@ class Box extends Component{
         ]
     }
 
+    handleCreateTimer = ({title, project}) => {
+        const timer = {
+            title, 
+            project, 
+            id: uuidv4(), 
+            elapsed: 0, 
+            runningSince: null
+        };
+        this.setState({
+            timers: [...this.state.timers, timer]
+        })
+    }
+
     render(){
         return(
         <div className="boxed--view">
             <div className="boxed--view__box">
                 <ListContainer timers={this.state.timers} />
-                <ActionContainer />
+                <ActionContainer onFormSubmit={this.handleCreateTimer}/>
             </div>
         </div>
         )
