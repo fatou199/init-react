@@ -18,7 +18,7 @@ class Container extends Component{
         return(
         <div className="list--container">
            {this.state.isFormOpen ? (
-            //   si le state isFormOpen est true, on affiche le formulaire pour modifier un timer
+            //   si le state isFormOpen est true, on affiche le formulaire timerForm
                <TimerForm 
                     title={this.props.title}
                     project={this.props.project}
@@ -34,6 +34,7 @@ class Container extends Component{
                     elapsed={this.props.elapsed} // temps écoulé
                     runningSince={this.props.runningSince} // depuis quand le timer est lancé
                     onEditFormOpen={this.handleEditFormOpen}
+                    onDelete={this.props.onDelete}
                 />
             )}
         </div>
