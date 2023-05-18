@@ -3,6 +3,14 @@ import "../helpers.js";
 
 class Timer extends Component{
 
+    componentDidMount() {
+        this.myInterval = setInterval(() => this.forceUpdate(), 50);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.myInterval);
+    }
+
     handlePlay = () => {
         this.props.onPlay(this.props.id);
     }

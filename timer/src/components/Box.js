@@ -10,14 +10,14 @@ class Box extends Component{
                 title: "Apprendre React",
                 project: "Développement Web",
                 id: "1",
-                elapsed: "8986300",
+                elapsed: 8986300,
                 runningSince: null
             },
             {
                 title: "Apprendre Angular",
                 project: "Développement Web",
                 id: "2",
-                elapsed: "1348905",
+                elapsed: 1348905,
                 runningSince: null
             },
         ]
@@ -69,7 +69,7 @@ class Box extends Component{
                         ...timer,
                         runningSince: now
                     }
-                }else {
+                } else {
                     return{
                         ...timer
                     }
@@ -90,10 +90,8 @@ class Box extends Component{
                         runningSince: null,
                         elapsed: timer.elapsed + nextElapsed
                     }
-                }else {
-                    return{
-                        ...timer
-                    }
+                } else {
+                    return{...timer}
                 }
             })
         })
