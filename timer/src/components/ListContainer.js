@@ -1,29 +1,36 @@
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import Container from "./Container";
 
-class ListContainer extends Component{
-    renderContainer = () => {
-        return this.props.timers.map(timer => {
-            return (
-                <Container 
-                    onFormSubmit={this.props.onFormSubmit} 
-                    onDelete={this.props.onDelete}
-                    onPlay={this.props.onPlay}
-                    onPause={this.props.onPause}
-                    key={timer.id} 
-                    {...timer} 
-                />
-            )
-        })
-    }
+const renderContainer = (props) => {
+    return props.timers.map(timer => {
+        return (
+            <Container 
+                onFormSubmit={props.onFormSubmit} 
+                onDelete={props.onDelete}
+                onPlay={props.onPlay}
+                onPause={props.onPause}
+                key={timer.id} 
+                {...timer} 
+            />
+        )
+    })
+}
 
-    render(){
+const ListContainer = (props) => {
         return(
         <div className="list--container">
-            {this.renderContainer()}
+            {renderContainer(props)}
         </div>
         )
     }
+
+ListContainer.prototype = {
+    onFormSubmit: PropTypes.func.isRequired,
+    onDelete: PropTypes.func.isRequired,
+    onPlay: PropTypes.func.isRequired,
+    onPause: PropTypes.func.isRequired,
+    timers: PropTypes.array.isRequired,
 }
 
 export default ListContainer;

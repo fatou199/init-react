@@ -13,6 +13,16 @@ class Container extends Component{
         })
     }
 
+    handleEditFormClose = () => {
+        this.setState({
+            isFormOpen: false
+        })
+    }
+
+    onFormSubmit = ({ id, title, project }) => {
+        this.handleEditFormClose();
+        this.props.onFormSubmit({ id, title, project });
+    }
 
     render(){
         return(
@@ -23,7 +33,8 @@ class Container extends Component{
                     title={this.props.title}
                     project={this.props.project}
                     id={this.props.id}
-                    onFormSubmit={this.props.onFormSubmit}
+                    onFormSubmit={this.onFormSubmit}
+                    onCloseForm={this.handleEditFormClose}
                 />
             ) : (
             //   sinon on affiche le timer
